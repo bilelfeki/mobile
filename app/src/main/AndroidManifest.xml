@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Caisse">
         <activity
+            android:name=".GetTester"
+            android:exported="false" />
+        <activity
             android:name=".TicketListActivity"
             android:exported="false" />
         <activity

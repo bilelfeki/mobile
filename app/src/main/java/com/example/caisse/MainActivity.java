@@ -48,6 +48,21 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 }) ;
+        Button b3 = findViewById(R.id.button2);
+        b3.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(MainActivity.this, GetTester.class);
+                        startActivity(i);
+                    }
+                }) ;
+        /**
+         * this test is similar to get a product
+         * but the spring project is not hosted and
+         * on a real api and that's make a problem
+         */
+
     }
     @Override
     protected void onStart() {
