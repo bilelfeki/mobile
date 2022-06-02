@@ -5,13 +5,17 @@ public class ProductLigne {
     private String name ;
     private int price ;
 
+    public Integer getPrice() {
+        return price;
+    }
+
     public ProductLigne(int id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

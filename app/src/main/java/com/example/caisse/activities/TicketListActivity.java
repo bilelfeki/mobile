@@ -1,4 +1,4 @@
-package com.example.caisse;
+package com.example.caisse.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.example.caisse.R;
 
 public class TicketListActivity extends AppCompatActivity {
     public final int x=0 ;
@@ -36,22 +38,21 @@ public class TicketListActivity extends AppCompatActivity {
                 qty.setTextColor(Color.parseColor("#E7625F"));
 
                 TextView nameProduit = new TextView(this);
-                nameProduit.setText("name");
+                nameProduit.setText("id");
                 nameProduit.setTextColor(Color.parseColor("#E7625F"));
 
                 TextView priceProduct = new TextView(this);
-                priceProduct.setText("price");
+                priceProduct.setText("      totalPrice");
                 priceProduct.setTextColor(Color.parseColor("#E7625F"));
 
-
+                row.addView(nameProduit);
                 row.addView(qty);
                 row.addView(priceProduct);
-                row.addView(nameProduit);
                 ll.addView(row, i);
             } else {
                 int x=0 ;
                 String id = new String(i.toString());
-                Integer prix = i*10;
+                Integer prix = 5000;
                 String price = new String(prix.toString());
                 TableRow row = new TableRow(this);
 
@@ -63,15 +64,17 @@ public class TicketListActivity extends AppCompatActivity {
                 row.addView(qty);
 
 
+
+
                 TextView nameProduit = new TextView(this);
-                nameProduit.setText("croustina");
+                nameProduit.setText("   10");
                 row.addView(nameProduit);
 
                 TextView increment = new TextView(this);
                 row.addView(increment);
 
                 TextView priceProduct = new TextView(this);
-                priceProduct.setText("price");
+                priceProduct.setText("     toatalPrice");
                 priceProduct.setText(price);
                 row.addView(priceProduct);
 
@@ -82,7 +85,6 @@ public class TicketListActivity extends AppCompatActivity {
                 myButton.setText("+");
                 myButton.setId(i);
                 myButton.setWidth(2);
-                row.addView(myButton);
                 myButton.setOnClickListener(
                         new View.OnClickListener() {
                             @Override

@@ -1,10 +1,12 @@
-package com.example.caisse;
+package com.example.caisse.backend;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.caisse.R;
 
 import java.io.IOException;
 
@@ -14,7 +16,11 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class GetTester extends AppCompatActivity {
+/**
+ * activity to test Get from the server
+ */
+
+public class GetTesterActivity extends AppCompatActivity {
     TextView responsePlace;
 /*
     public String fakeApi="https://reqres.in/api/users/2" ;
@@ -51,17 +57,26 @@ public class GetTester extends AppCompatActivity {
                 new Callback() {
                     @Override
                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                        responsePlace.append("your response is failed");
+                        responsePlace.append("your request is failed");
                     }
 
                     @Override
                     public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                         if(response.isSuccessful()) {
-                            final String ticket = response.body().string();
-                            GetTester.this.runOnUiThread(new Runnable() {
+                            /**
+                             * make an instance of jsonToObjectConvertor to
+                             * convert your response
+                             */
+                            final String productJson = response.body().string();
+                            /**
+                             *JsonToObjectConvertor convertor= new JsonToObjectConvertor(productJson) ;
+                             * ProductFake product = convertor.transform() ;
+                             */
+
+                            GetTesterActivity.this.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    responsePlace.append(ticket);
+                                    responsePlace.append(productJson);
                                 }
                             });
                         }
